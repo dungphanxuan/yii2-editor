@@ -1,0 +1,33 @@
+{
+    "name": "dungphanxuan/yii2-editor",
+    "description": "Yii2 Markdow editor base on bootstrap plugin for markdown editing.",
+    "type": "yii2-extension",
+    "keywords": [
+        "markdown-editor",
+        "html",
+        "bootstrap-markdown",
+        "text",
+        "editor",
+        "wysiwyg",
+        "rich editor",
+        "rich text editor",
+        "rte",
+        "javascript",
+        "jquery"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dungphanxuan",
+            "email": "dungphanxuan@vccorp.vn"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "dungphanxuan\\yii2editor\\": ""
+        }
+    }
+}
