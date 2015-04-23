@@ -49,30 +49,11 @@ class MarkDownEditorWidget extends InputWidget
     public function registerClientScript()
     {
         $view = $this->getView();
-        //$this->initClientOptions();
+        $this->initClientOptions();
 
         $asset = MarkDownEditorAsset::register($view);
+        $view ->registerJsFile('http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js');
 
-        //$this->updateAsset();
-
-        $view ->registerCssFile('http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css');
-
-        $id = $this->options['id'];
-        $varName = self::PLUGIN_NAME . '_' . str_replace('-', '_', $id);
-        $js = "
-          console.log('Hello');
-        ";
-        $view->registerJs($js);
-    }
-    /*
-     *
-     * */
-    public function updateAsset(){
-//Replace jquery 2
-        Yii::$app->assetManager->bundles['yii\web\JqueryAsset'] = [
-            'sourcePath' => null,
-            'js' => ['jquery.js' => 'http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js'],
-        ];
     }
     /**
      * client options init
@@ -81,13 +62,9 @@ class MarkDownEditorWidget extends InputWidget
     {
         // KindEditor optional parameters
         $params = [
-            'rows',
-            'theme',
-            'data-provide',
+            'language',
         ];
-        $options = [];
-        $options['rows'] = '10';
-        $options['data-provide'] = 'markdown';
+        $options['language'] = 'ja';
         foreach ($params as $key) {
             if (isset($this->clientOptions[$key])) {
                 $options[$key] = $this->clientOptions[$key];
