@@ -7,6 +7,59 @@ Markdown editing meet Bootstrap.
 | Bootstrap Markdown v2.x | **only** compatible with Bootstrap 3.x |
 | Bootstrap Markdown v1.x | **only** compatible with Bootstrap 2.x |
 
+
+Installation
+------------
+
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+
+Either run
+
+```
+php composer.phar require --prefer-dist dungphanxuan/yii2-editor "*"
+```
+
+or add
+
+```
+"dungphanxuan/yii2-editor": "dev-master"
+```
+
+to the require section of your `composer.json` file.
+
+
+Usage
+-----
+
+Once the extension is installed, simply use it in your code by  :
+
+```php
+<?php echo dungphanxuan\yii2editor\MarkDownEditorWidget::widget([
+                            'name' => 'content',
+                            'options'=>[// html attributes
+                                'id'=>'content',
+                                'rows'=>'5',
+                                'placeholder'=>'Leave a comment',
+                                'data-provide'=>'markdown',
+                            ],
+]);; ?>
+```
+
+or use with a model:
+
+```php
+<?php echo dungphanxuan\yii2editor\MarkDownEditorWidget::widget([
+                            'model' => $model,
+                            'attribute' => 'content',
+                            'options'=>[// html attributes
+                                'id'=>'content',
+                                'rows'=>'5',
+                                'placeholder'=>'Leave a comment',
+                                'data-provide'=>'markdown',
+                            ],
+ ]);; ?>
+```
+
 Demo and documentation on [http://toopay.github.io/bootstrap-markdown/](http://toopay.github.io/bootstrap-markdown/)
 
 ### LICENSE
@@ -24,3 +77,4 @@ Demo and documentation on [http://toopay.github.io/bootstrap-markdown/](http://t
 > WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 > See the License for the specific language governing permissions and
 > limitations under the License.
+
